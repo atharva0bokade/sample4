@@ -1,13 +1,11 @@
-// 
-import React  from 'react'
+import logo from './logo.svg';
+import './App.css';
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './statusStyle.css';
 import {Route, Link, Router} from 'react-router-dom';
 
-
-function Status(props) {
-  
+function App() {
   const [request1_list,setRequest1_list]=useState([]);
   
 
@@ -25,7 +23,15 @@ function Status(props) {
     )
   },[]);
   
-  
+  const reject=(id)=>{
+    Axios.put("http://localhost:3001/approve",{
+      id:id,
+      approve:"Rejected",
+    });
+    
+    
+  }
+    
     return (
     
       <div className="requests">
@@ -48,6 +54,6 @@ function Status(props) {
     </div>
     </div>
     );
-  }
-  export default Status;
-  
+}
+
+export default App;
