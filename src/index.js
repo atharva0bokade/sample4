@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css'
+import {BrowserRouter as Router,Route, Routes, Link, BrowserRouter} from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Routes>
+      <Route path ="/" element={<App />}/>
+    </Routes>
+    </BrowserRouter>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
